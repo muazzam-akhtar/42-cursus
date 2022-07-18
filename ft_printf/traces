@@ -1,0 +1,644 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+lab1r6s2.42abudhabi.ae
+Darwin 19.6.0 x86_64
+$> date
+Thu Nov  4 18:32:07 +04 2021
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/c++/4.2.1
+Apple clang version 12.0.0 (clang-1200.0.32.29)
+Target: x86_64-apple-darwin19.6.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple clang version 12.0.0 (clang-1200.0.32.29)
+Target: x86_64-apple-darwin19.6.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: git@vogsphere.42abudhabi.ae:vogsphere/intra-uuid-8bca7283-4723-4a92-b11c-1e9aebaa8845-3869704
+
+= Git history ==================================================================
+$> git -C /tmp/tmpasxksbt1/user log --pretty='%H - %an, %ad : %s'
+3576bffd1d736e2b9dd5f14eda591ff1d090171d - Muazzam Akhtar, Thu Nov 4 15:53:40 2021 +0400 : ft_printf
+
+= Collected files ==========================================
+$> ls -lAR /tmp/tmpasxksbt1/user
+total 104
+-rw-r--r--  1 root  wheel  1395 Nov  4 18:32 Makefile
+-rw-r--r--  1 root  wheel   944 Nov  4 18:32 __GIT_HISTORY
+-rw-r--r--  1 root  wheel  3617 Nov  4 18:32 flags_f.c
+-rw-r--r--  1 root  wheel  2580 Nov  4 18:32 ft_printf.c
+-rw-r--r--  1 root  wheel  3739 Nov  4 18:32 ft_printf.h
+-rw-r--r--  1 root  wheel  2583 Nov  4 18:32 parse.c
+-rw-r--r--  1 root  wheel  3303 Nov  4 18:32 print.c
+-rw-r--r--  1 root  wheel  2487 Nov  4 18:32 print_un.c
+-rw-r--r--  1 root  wheel  1753 Nov  4 18:32 utils.c
+-rw-r--r--  1 root  wheel  2905 Nov  4 18:32 utils1.c
+-rw-r--r--  1 root  wheel  2127 Nov  4 18:32 utils2.c
+-rw-r--r--  1 root  wheel  3293 Nov  4 18:32 work_int.c
+-rw-r--r--  1 root  wheel  2206 Nov  4 18:32 work_un.c
+
+= test_spdxiucpercent ==========================================================
+$> /usr/bin/norminette  utils2.c work_int.c flags_f.c utils1.c utils.c print.c parse.c ft_printf.c ft_printf.h work_un.c print_un.c | grep -E '^(Error|Warning)'
+
+
+total 96
+-rw-r--r--  1 deepthought  deepthought  1395 Nov  4 14:32 Makefile
+-rw-r--r--  1 deepthought  deepthought  3617 Nov  4 14:32 flags_f.c
+-rw-r--r--  1 deepthought  deepthought  2580 Nov  4 14:32 ft_printf.c
+-rw-r--r--  1 deepthought  deepthought  3739 Nov  4 14:32 ft_printf.h
+-rw-r--r--  1 deepthought  deepthought  2583 Nov  4 14:32 parse.c
+-rw-r--r--  1 deepthought  deepthought  3303 Nov  4 14:32 print.c
+-rw-r--r--  1 deepthought  deepthought  2487 Nov  4 14:32 print_un.c
+-rw-r--r--  1 deepthought  deepthought  1753 Nov  4 14:32 utils.c
+-rw-r--r--  1 deepthought  deepthought  2905 Nov  4 14:32 utils1.c
+-rw-r--r--  1 deepthought  deepthought  2127 Nov  4 14:32 utils2.c
+-rw-r--r--  1 deepthought  deepthought  3293 Nov  4 14:32 work_int.c
+-rw-r--r--  1 deepthought  deepthought  2206 Nov  4 14:32 work_un.c
+
+
+rm -rf utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+gcc -Wall -Wextra -Werror   -c -o utils.o utils.c
+
+gcc -Wall -Wextra -Werror   -c -o print.o print.c
+
+gcc -Wall -Wextra -Werror   -c -o flags_f.o flags_f.c
+
+gcc -Wall -Wextra -Werror   -c -o ft_printf.o ft_printf.c
+
+gcc -Wall -Wextra -Werror   -c -o parse.o parse.c
+
+gcc -Wall -Wextra -Werror   -c -o print_un.o print_un.c
+
+gcc -Wall -Wextra -Werror   -c -o utils1.o utils1.c
+gcc -Wall -Wextra -Werror   -c -o utils2.o utils2.c
+
+gcc -Wall -Wextra -Werror   -c -o work_int.o work_int.c
+
+gcc -Wall -Wextra -Werror   -c -o work_un.o work_un.c
+ar -rcs libftprintf.a utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+rm -rf utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+rm -rf libftprintf.a
+
+gcc -Wall -Wextra -Werror   -c -o utils.o utils.c
+
+gcc -Wall -Wextra -Werror   -c -o print.o print.c
+
+gcc -Wall -Wextra -Werror   -c -o flags_f.o flags_f.c
+
+gcc -Wall -Wextra -Werror   -c -o ft_printf.o ft_printf.c
+
+gcc -Wall -Wextra -Werror   -c -o parse.o parse.c
+
+gcc -Wall -Wextra -Werror   -c -o print_un.o print_un.c
+
+gcc -Wall -Wextra -Werror   -c -o utils1.o utils1.c
+
+gcc -Wall -Wextra -Werror   -c -o utils2.o utils2.c
+
+gcc -Wall -Wextra -Werror   -c -o work_int.o work_int.c
+
+gcc -Wall -Wextra -Werror   -c -o work_un.o work_un.c
+
+ar -rcs libftprintf.a utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+rm -rf utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+rm -rf libftprintf.a
+gcc -Wall -Wextra -Werror   -c -o utils.o utils.c
+
+gcc -Wall -Wextra -Werror   -c -o print.o print.c
+gcc -Wall -Wextra -Werror   -c -o flags_f.o flags_f.c
+
+gcc -Wall -Wextra -Werror   -c -o ft_printf.o ft_printf.c
+gcc -Wall -Wextra -Werror   -c -o parse.o parse.c
+
+gcc -Wall -Wextra -Werror   -c -o print_un.o print_un.c
+gcc -Wall -Wextra -Werror   -c -o utils1.o utils1.c
+
+gcc -Wall -Wextra -Werror   -c -o utils2.o utils2.c
+gcc -Wall -Wextra -Werror   -c -o work_int.o work_int.c
+
+gcc -Wall -Wextra -Werror   -c -o work_un.o work_un.c
+
+ar -rcs libftprintf.a utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+
+-rw-r--r--  1 deepthought  deepthought  26040 Nov  4 14:32 libftprintf.a
+
+
+rm -rf utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+gcc -Wall -Wextra -Werror   -c -o utils.o utils.c
+gcc -Wall -Wextra -Werror   -c -o print.o print.c
+gcc -Wall -Wextra -Werror   -c -o flags_f.o flags_f.c
+gcc -Wall -Wextra -Werror   -c -o ft_printf.o ft_printf.c
+gcc -Wall -Wextra -Werror   -c -o parse.o parse.c
+gcc -Wall -Wextra -Werror   -c -o print_un.o print_un.c
+gcc -Wall -Wextra -Werror   -c -o utils1.o utils1.c
+gcc -Wall -Wextra -Werror   -c -o utils2.o utils2.c
+gcc -Wall -Wextra -Werror   -c -o work_int.o work_int.c
+gcc -Wall -Wextra -Werror   -c -o work_un.o work_un.c
+ar -rcs libftprintf.a utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+rm -rf utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+rm -rf libftprintf.a
+gcc -Wall -Wextra -Werror   -c -o utils.o utils.c
+gcc -Wall -Wextra -Werror   -c -o print.o print.c
+gcc -Wall -Wextra -Werror   -c -o flags_f.o flags_f.c
+gcc -Wall -Wextra -Werror   -c -o ft_printf.o ft_printf.c
+gcc -Wall -Wextra -Werror   -c -o parse.o parse.c
+gcc -Wall -Wextra -Werror   -c -o print_un.o print_un.c
+gcc -Wall -Wextra -Werror   -c -o utils1.o utils1.c
+gcc -Wall -Wextra -Werror   -c -o utils2.o utils2.c
+gcc -Wall -Wextra -Werror   -c -o work_int.o work_int.c
+gcc -Wall -Wextra -Werror   -c -o work_un.o work_un.c
+ar -rcs libftprintf.a utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+rm -rf utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+rm -rf libftprintf.a
+gcc -Wall -Wextra -Werror   -c -o utils.o utils.c
+gcc -Wall -Wextra -Werror   -c -o print.o print.c
+gcc -Wall -Wextra -Werror   -c -o flags_f.o flags_f.c
+gcc -Wall -Wextra -Werror   -c -o ft_printf.o ft_printf.c
+gcc -Wall -Wextra -Werror   -c -o parse.o parse.c
+gcc -Wall -Wextra -Werror   -c -o print_un.o print_un.c
+gcc -Wall -Wextra -Werror   -c -o utils1.o utils1.c
+gcc -Wall -Wextra -Werror   -c -o utils2.o utils2.c
+gcc -Wall -Wextra -Werror   -c -o work_int.o work_int.c
+gcc -Wall -Wextra -Werror   -c -o work_un.o work_un.c
+ar -rcs libftprintf.a utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+-rw-r--r--  1 deepthought  deepthought  26040 Nov  4 14:32 libftprintf.a
+
+total 264
+-rw-r--r--  1 deepthought  deepthought    492 Nov  4 14:32 Makefile
+-rw-r--r--  1 deepthought  deepthought   3617 Nov  4 14:32 flags_f.c
+-rw-r--r--  1 deepthought  deepthought   2580 Nov  4 14:32 ft_printf.c
+-rw-r--r--  1 deepthought  deepthought   3739 Nov  4 14:32 ft_printf.h
+-rw-r--r--  1 deepthought  deepthought  26040 Nov  4 14:32 libftprintf.a
+-rw-r--r--  1 deepthought  deepthought   1153 Nov  4 14:32 main.c
+-rw-r--r--  1 deepthought  deepthought   2583 Nov  4 14:32 parse.c
+-rw-r--r--  1 deepthought  deepthought   3303 Nov  4 14:32 print.c
+-rw-r--r--  1 deepthought  deepthought   2487 Nov  4 14:32 print_un.c
+-rw-r--r--  1 deepthought  deepthought   3937 Nov  4 14:32 test_c.c
+-rw-r--r--  1 deepthought  deepthought   2813 Nov  4 14:32 test_d.c
+-rw-r--r--  1 deepthought  deepthought   2813 Nov  4 14:32 test_i.c
+-rw-r--r--  1 deepthought  deepthought   2185 Nov  4 14:32 test_mix.c
+-rw-r--r--  1 deepthought  deepthought   2380 Nov  4 14:32 test_p.c
+-rw-r--r--  1 deepthought  deepthought  19697 Nov
+ 4 14:32 test_s.c
+-rw-r--r--  1 deepthought  deepthought   2797 Nov  4 14:32 test_u.c
+-rw-r--r--  1 deepthought  deepthought   2812 Nov  4 14:32 test_x.c
+-rw-r--r--  1 deepthought  deepthought   1149 Nov  4 14:32 tests.h
+-rw-r--r--  1 deepthought  deepthought   1753 Nov  4 14:32 utils.c
+-rw-r--r--  1 deepthought  deepthought   2905 Nov  4 14:32 utils1.c
+-rw-r--r--  1 deepthought  deepthought   2127 Nov  4 14:32 utils2.c
+-rw-r--r--  1 deepthought  deepthought   3293 Nov  4 14:32 work_int.c
+-rw-r--r--  1 deepthought  deepthought   2206 Nov  4 14:32 work_un.c
+
+
+clang -Wall -Wextra -Werror -fsanitize=address   -c -o test_s.o test_s.c
+
+clang -Wall -Wextra -Werror -fsanitize=address   -c -o test_d.o test_d.c
+
+clang -Wall -Wextra -Werror -fsanitize=address   -c -o test_p.o test_p.c
+
+clang -Wall -Wextra -Werror -fsanitize=address   -c -o test_x.o test_x.c
+
+clang -Wall -Wextra -Werror -fsanitize=address   -c -o test_i.o test_i.c
+clang -Wall -Wextra -Werror -fsanitize=address   -c -o test_u.o test_u.c
+
+clang -Wall -Wextra -Werror -fsanitize=address   -c -o test_c.o test_c.c
+
+clang -Wall -Wextra -Werror -fsanitize=address   -c -o test_mix.o test_mix.c
+clang -Wall -Wextra -Werror -fsanitize=address   -c -o main.o main.c
+
+clang -Wall -Wextra -Werror -fsanitize=address -o test_printf -L. test_s.o test_d.o test_p.o test_x.o test_i.o test_u.o test_c.o test_mix.o main.o -lftprintf
+
+
+clang -Wall -Wextra -Werror -fsanitize=address   -c -o test_s.o test_s.c
+clang -Wall -Wextra -Werror -fsanitize=address   -c -o test_d.o test_d.c
+clang -Wall -Wextra -Werror -fsanitize=address   -c -o test_p.o test_p.c
+clang -Wall -Wextra -Werror -fsanitize=address   -c -o test_x.o test_x.c
+clang -Wall -Wextra -Werror -fsanitize=address   -c -o test_i.o test_i.c
+clang -Wall -Wextra -Werror -fsanitize=address   -c -o test_u.o test_u.c
+clang -Wall -Wextra -Werror -fsanitize=address   -c -o test_c.o test_c.c
+clang -Wall -Wextra -Werror -fsanitize=address   -c -o test_mix.o test_mix.c
+clang -Wall -Wextra -Werror -fsanitize=address   -c -o main.o main.c
+clang -Wall -Wextra -Werror -fsanitize=address -o test_printf -L. test_s.o test_d.o test_p.o test_x.o test_i.o test_u.o test_c.o test_mix.o main.o -lftprintf
+
+total 408
+-rw-r--r--  1 deepthought  deepthought    492 Nov  4 14:32 Makefile
+-rw-r--r--  1 deepthought  deepthought   3617 Nov  4 14:32 flags_f.c
+-rw-r--r--  1 deepthought  deepthought   2580 Nov  4 14:32 ft_printf.c
+-rw-r--r--  1 deepthought  deepthought   3739 Nov  4 14:32 ft_printf.h
+-rw-r--r--  1 deepthought  deepthought  26040 Nov  4 14:32 libftprintf.a
+-rw-r--r--  1 deepthought  deepthought   1153 Nov  4 14:32 main.c
+-rw-r--r--  1 deepthought  deepthought   2583 Nov  4 14:32 parse.c
+-rw-r--r--  1 deepthought  deepthought   3303 Nov  4 14:32 print.c
+-rw-r--r--  1 deepthought  deepthought   2487 Nov  4 14:32 print_un.c
+-rw-r--r--  1 deepthought  deepthought   3937 Nov  4 14:32 test_c.c
+-rw-r--r--  1 deepthought  deepthought   2813 Nov  4 14:32 test_d.c
+-rw-r--r--  1 deepthought  deepthought   2813 Nov  4 14:32 test_i.c
+-rw-r--r--  1 deepthought  deepthought   2185 Nov  4 14:32 test_mix.c
+-rw-r--r--  1 deepthought  deepthought   2380 Nov  4 14:32 test_p.c
+-rwxr-xr-x  1 deepthought  deepthought  72724 Nov
+ 4 14:32 test_printf
+-rw-r--r--  1 deepthought  deepthought  19697 Nov  4 14:32 test_s.c
+-rw-r--r--  1 deepthought  deepthought   2797 Nov  4 14:32 test_u.c
+-rw-r--r--  1 deepthought  deepthought   2812 Nov  4 14:32 test_x.c
+-rw-r--r--  1 deepthought  deepthought   1149 Nov  4 14:32 tests.h
+-rw-r--r--  1 deepthought  deepthought   1753 Nov  4 14:32 utils.c
+-rw-r--r--  1 deepthought  deepthought   2905 Nov  4 14:32 utils1.c
+-rw-r--r--  1 deepthought  deepthought   2127 Nov  4 14:32 utils2.c
+-rw-r--r--  1 deepthought  deepthought   3293 Nov  4 14:32 work_int.c
+-rw-r--r--  1 deepthought  deepthought   2206 Nov  4 14:32 work_un.c
+
+
+test_s: [ok]
+test_d: [ok]
+test_p: [ok]
+test_x: [ok]
+test_i: [ok]
+test_u: [ok]
+test_c: [ok]
+test_mix: [ok]
+
+
+test_s: [ok]
+test_d: [ok]
+test_p: [ok]
+test_x: [ok]
+test_i: [ok]
+test_u: [ok]
+test_c: [ok]
+test_mix: [ok]
+
+8/8 correct functions
+Grade: 100
+
+= bonus_one ====================================================================
+total 96
+-rw-r--r--  1 deepthought  deepthought  1395 Nov  4 14:32 Makefile
+-rw-r--r--  1 deepthought  deepthought  3617 Nov  4 14:32 flags_f.c
+-rw-r--r--  1 deepthought  deepthought  2580 Nov  4 14:32 ft_printf.c
+-rw-r--r--  1 deepthought  deepthought  3739 Nov  4 14:32 ft_printf.h
+-rw-r--r--  1 deepthought  deepthought  2583 Nov  4 14:32 parse.c
+-rw-r--r--  1 deepthought  deepthought  3303 Nov  4 14:32 print.c
+-rw-r--r--  1 deepthought  deepthought  2487 Nov  4 14:32 print_un.c
+-rw-r--r--  1 deepthought  deepthought  1753 Nov  4 14:32 utils.c
+-rw-r--r--  1 deepthought  deepthought  2905 Nov  4 14:32 utils1.c
+-rw-r--r--  1 deepthought  deepthought  2127 Nov  4 14:32 utils2.c
+-rw-r--r--  1 deepthought  deepthought  3293 Nov  4 14:32 work_int.c
+-rw-r--r--  1 deepthought  deepthought  2206 Nov  4 14:32 work_un.c
+
+
+rm -rf utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+gcc -Wall -Wextra -Werror   -c -o utils.o utils.c
+
+gcc -Wall -Wextra -Werror   -c -o print.o print.c
+
+gcc -Wall -Wextra -Werror   -c -o flags_f.o flags_f.c
+
+gcc -Wall -Wextra -Werror   -c -o ft_printf.o ft_printf.c
+
+gcc -Wall -Wextra -Werror   -c -o parse.o parse.c
+
+gcc -Wall -Wextra -Werror   -c -o print_un.o print_un.c
+
+gcc -Wall -Wextra -Werror   -c -o utils1.o utils1.c
+
+gcc -Wall -Wextra -Werror   -c -o utils2.o utils2.c
+gcc -Wall -Wextra -Werror   -c -o work_int.o work_int.c
+
+gcc -Wall -Wextra -Werror   -c -o work_un.o work_un.c
+
+ar -rcs libftprintf.a utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+
+rm -rf utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+rm -rf libftprintf.a
+
+gcc -Wall -Wextra -Werror   -c -o utils.o utils.c
+gcc -Wall -Wextra -Werror   -c -o print.o print.c
+
+gcc -Wall -Wextra -Werror   -c -o flags_f.o flags_f.c
+
+gcc -Wall -Wextra -Werror   -c -o ft_printf.o ft_printf.c
+
+gcc -Wall -Wextra -Werror   -c -o parse.o parse.c
+
+gcc -Wall -Wextra -Werror   -c -o print_un.o print_un.c
+
+gcc -Wall -Wextra -Werror   -c -o utils1.o utils1.c
+
+gcc -Wall -Wextra -Werror   -c -o utils2.o utils2.c
+
+gcc -Wall -Wextra -Werror   -c -o work_int.o work_int.c
+
+gcc -Wall -Wextra -Werror   -c -o work_un.o work_un.c
+
+ar -rcs libftprintf.a utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+
+rm -rf utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+rm -rf libftprintf.a
+gcc -Wall -Wextra -Werror   -c -o utils.o utils.c
+
+gcc -Wall -Wextra -Werror   -c -o print.o print.c
+gcc -Wall -Wextra -Werror   -c -o flags_f.o flags_f.c
+
+gcc -Wall -Wextra -Werror   -c -o ft_printf.o ft_printf.c
+
+gcc -Wall -Wextra -Werror   -c -o parse.o parse.c
+
+gcc -Wall -Wextra -Werror   -c -o print_un.o print_un.c
+
+gcc -Wall -Wextra -Werror   -c -o utils1.o utils1.c
+
+gcc -Wall -Wextra -Werror   -c -o utils2.o utils2.c
+
+gcc -Wall -Wextra -Werror   -c -o work_int.o work_int.c
+
+gcc -Wall -Wextra -Werror   -c -o work_un.o work_un.c
+
+ar -rcs libftprintf.a utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+
+ar -rcs libftprintf.a utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+-rw-r--r--  1 deepthought  deepthought  26040 Nov  4 14:32 libftprintf.a
+
+
+rm -rf utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+gcc -Wall -Wextra -Werror   -c -o utils.o utils.c
+gcc -Wall -Wextra -Werror   -c -o print.o print.c
+gcc -Wall -Wextra -Werror   -c -o flags_f.o flags_f.c
+gcc -Wall -Wextra -Werror   -c -o ft_printf.o ft_printf.c
+gcc -Wall -Wextra -Werror   -c -o parse.o parse.c
+gcc -Wall -Wextra -Werror   -c -o print_un.o print_un.c
+gcc -Wall -Wextra -Werror   -c -o utils1.o utils1.c
+gcc -Wall -Wextra -Werror   -c -o utils2.o utils2.c
+gcc -Wall -Wextra -Werror   -c -o work_int.o work_int.c
+gcc -Wall -Wextra -Werror   -c -o work_un.o work_un.c
+ar -rcs libftprintf.a utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+rm -rf utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+rm -rf libftprintf.a
+gcc -Wall -Wextra -Werror   -c -o utils.o utils.c
+gcc -Wall -Wextra -Werror   -c -o print.o print.c
+gcc -Wall -Wextra -Werror   -c -o flags_f.o flags_f.c
+gcc -Wall -Wextra -Werror   -c -o ft_printf.o ft_printf.c
+gcc -Wall -Wextra -Werror   -c -o parse.o parse.c
+gcc -Wall -Wextra -Werror   -c -o print_un.o print_un.c
+gcc -Wall -Wextra -Werror   -c -o utils1.o utils1.c
+gcc -Wall -Wextra -Werror   -c -o utils2.o utils2.c
+gcc -Wall -Wextra -Werror   -c -o work_int.o work_int.c
+gcc -Wall -Wextra -Werror   -c -o work_un.o work_un.c
+ar -rcs libftprintf.a utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+rm -rf utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+rm -rf libftprintf.a
+gcc -Wall -Wextra -Werror   -c -o utils.o utils.c
+gcc -Wall -Wextra -Werror   -c -o print.o print.c
+gcc -Wall -Wextra -Werror   -c -o flags_f.o flags_f.c
+gcc -Wall -Wextra -Werror   -c -o ft_printf.o ft_printf.c
+gcc -Wall -Wextra -Werror   -c -o parse.o parse.c
+gcc -Wall -Wextra -Werror   -c -o print_un.o print_un.c
+gcc -Wall -Wextra -Werror   -c -o utils1.o utils1.c
+gcc -Wall -Wextra -Werror   -c -o utils2.o utils2.c
+gcc -Wall -Wextra -Werror   -c -o work_int.o work_int.c
+gcc -Wall -Wextra -Werror   -c -o work_un.o work_un.c
+ar -rcs libftprintf.a utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+ar -rcs libftprintf.a utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+-rw-r--r--  1 deepthought  deepthought  26040 Nov  4 14:32 libftprintf.a
+
+total 192
+-rw-r--r--  1 deepthought  deepthought    406 Nov  4 14:32 Makefile
+-rw-r--r--  1 deepthought  deepthought   3617 Nov  4 14:32 flags_f.c
+-rw-r--r--  1 deepthought  deepthought   2580 Nov  4 14:32 ft_printf.c
+-rw-r--r--  1 deepthought  deepthought   3739 Nov  4 14:32 ft_printf.h
+-rw-r--r--  1 deepthought  deepthought  26040 Nov  4 14:32 libftprintf.a
+-rw-r--r--  1 deepthought  deepthought   1066 Nov  4 14:32 main.c
+-rw-r--r--  1 deepthought  deepthought   2583 Nov  4 14:32 parse.c
+-rw-r--r--  1 deepthought  deepthought   3303 Nov  4 14:32 print.c
+-rw-r--r--  1 deepthought  deepthought   2487 Nov  4 14:32 print_un.c
+-rw-r--r--  1 deepthought  deepthought   2612 Nov  4 14:32 test_minus.c
+-rw-r--r--  1 deepthought  deepthought   2507 Nov  4 14:32 test_precision.c
+-rw-r--r--  1 deepthought  deepthought   2333 Nov  4 14:32 test_zero.c
+-rw-r--r--  1 deepthought  deepthought   1105 Nov  4 14:32 tests.h
+-rw-r--r--  1 deepthought  deepthought   1753 Nov  4 14:32 utils.c
+-rw-r--r--  1 deepthought  deepthought
+  2905 Nov  4 14:32 utils1.c
+-rw-r--r--  1 deepthought  deepthought   2127 Nov  4 14:32 utils2.c
+-rw-r--r--  1 deepthought  deepthought   3293 Nov  4 14:32 work_int.c
+-rw-r--r--  1 deepthought  deepthought   2206 Nov  4 14:32 work_un.c
+
+
+clang -Wall -Wextra -Werror   -c -o test_precision.o test_precision.c
+clang -Wall -Wextra -Werror   -c -o test_zero.o test_zero.c
+
+clang -Wall -Wextra -Werror   -c -o test_minus.o test_minus.c
+
+clang -Wall -Wextra -Werror   -c -o main.o main.c
+
+clang -Wall -Wextra -Werror -o test_printf -L. test_precision.o test_zero.o test_minus.o main.o -lftprintf
+
+
+clang -Wall -Wextra -Werror   -c -o test_precision.o test_precision.c
+clang -Wall -Wextra -Werror   -c -o test_zero.o test_zero.c
+clang -Wall -Wextra -Werror   -c -o test_minus.o test_minus.c
+clang -Wall -Wextra -Werror   -c -o main.o main.c
+clang -Wall -Wextra -Werror -o test_printf -L. test_precision.o test_zero.o test_minus.o main.o -lftprintf
+
+total 240
+-rw-r--r--  1 deepthought  deepthought    406 Nov  4 14:32 Makefile
+-rw-r--r--  1 deepthought  deepthought   3617 Nov  4 14:32 flags_f.c
+-rw-r--r--  1 deepthought  deepthought   2580 Nov  4 14:32 ft_printf.c
+-rw-r--r--  1 deepthought  deepthought   3739 Nov  4 14:32 ft_printf.h
+-rw-r--r--  1 deepthought  deepthought  26040 Nov  4 14:32 libftprintf.a
+-rw-r--r--  1 deepthought  deepthought   1066 Nov  4 14:32 main.c
+-rw-r--r--  1 deepthought  deepthought   2583 Nov  4 14:32 parse.c
+-rw-r--r--  1 deepthought  deepthought   3303 Nov  4 14:32 print.c
+-rw-r--r--  1 deepthought  deepthought   2487 Nov  4 14:32 print_un.c
+-rw-r--r--  1 deepthought  deepthought   2612 Nov  4 14:32 test_minus.c
+-rw-r--r--  1 deepthought  deepthought   2507 Nov  4 14:32 test_precision.c
+-rwxr-xr-x  1 deepthought  deepthought  23952 Nov  4 14:32 test_printf
+-rw-r--r--  1 deepthought  deepthought   2333 Nov  4 14:32 test_zero.c
+-rw-r--r--  1 deepthought  deepthought   1105 Nov  4 14:32 tests.h
+-rw-r--r--  1 deepthought  deepthou
+ght   1753 Nov  4 14:32 utils.c
+-rw-r--r--  1 deepthought  deepthought   2905 Nov  4 14:32 utils1.c
+-rw-r--r--  1 deepthought  deepthought   2127 Nov  4 14:32 utils2.c
+-rw-r--r--  1 deepthought  deepthought   3293 Nov  4 14:32 work_int.c
+-rw-r--r--  1 deepthought  deepthought   2206 Nov  4 14:32 work_un.c
+
+
+test_precision: [ok]
+test_zero: [ok]
+test_minus: [ok]
+
+
+test_precision: [ok]
+test_zero: [ok]
+test_minus: [ok]
+
+3/3 correct functions
+Grade: 15
+
+= bonus_two ====================================================================
+total 96
+-rw-r--r--  1 deepthought  deepthought  1395 Nov  4 14:32 Makefile
+-rw-r--r--  1 deepthought  deepthought  3617 Nov  4 14:32 flags_f.c
+-rw-r--r--  1 deepthought  deepthought  2580 Nov  4 14:32 ft_printf.c
+-rw-r--r--  1 deepthought  deepthought  3739 Nov  4 14:32 ft_printf.h
+-rw-r--r--  1 deepthought  deepthought  2583 Nov  4 14:32 parse.c
+-rw-r--r--  1 deepthought  deepthought  3303 Nov  4 14:32 print.c
+-rw-r--r--  1 deepthought  deepthought  2487 Nov  4 14:32 print_un.c
+-rw-r--r--  1 deepthought  deepthought  1753 Nov  4 14:32 utils.c
+-rw-r--r--  1 deepthought  deepthought  2905 Nov  4 14:32 utils1.c
+-rw-r--r--  1 deepthought  deepthought  2127 Nov  4 14:32 utils2.c
+-rw-r--r--  1 deepthought  deepthought  3293 Nov  4 14:32 work_int.c
+-rw-r--r--  1 deepthought  deepthought  2206 Nov  4 14:32 work_un.c
+
+
+rm -rf utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+
+gcc -Wall -Wextra -Werror   -c -o utils.o utils.c
+
+gcc -Wall -Wextra -Werror   -c -o print.o print.c
+
+gcc -Wall -Wextra -Werror   -c -o flags_f.o flags_f.c
+
+gcc -Wall -Wextra -Werror   -c -o ft_printf.o ft_printf.c
+
+gcc -Wall -Wextra -Werror   -c -o parse.o parse.c
+gcc -Wall -Wextra -Werror   -c -o print_un.o print_un.c
+
+gcc -Wall -Wextra -Werror   -c -o utils1.o utils1.c
+
+gcc -Wall -Wextra -Werror   -c -o utils2.o utils2.c
+
+gcc -Wall -Wextra -Werror   -c -o work_int.o work_int.c
+
+gcc -Wall -Wextra -Werror   -c -o work_un.o work_un.c
+
+ar -rcs libftprintf.a utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+
+rm -rf utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+rm -rf libftprintf.a
+gcc -Wall -Wextra -Werror   -c -o utils.o utils.c
+
+gcc -Wall -Wextra -Werror   -c -o print.o print.c
+gcc -Wall -Wextra -Werror   -c -o flags_f.o flags_f.c
+
+gcc -Wall -Wextra -Werror   -c -o ft_printf.o ft_printf.c
+
+gcc -Wall -Wextra -Werror   -c -o parse.o parse.c
+
+gcc -Wall -Wextra -Werror   -c -o print_un.o print_un.c
+
+gcc -Wall -Wextra -Werror   -c -o utils1.o utils1.c
+
+gcc -Wall -Wextra -Werror   -c -o utils2.o utils2.c
+
+gcc -Wall -Wextra -Werror   -c -o work_int.o work_int.c
+
+gcc -Wall -Wextra -Werror   -c -o work_un.o work_un.c
+
+ar -rcs libftprintf.a utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+-rw-r--r--  1 deepthought  deepthought  26040 Nov  4 14:32 libftprintf.a
+
+
+rm -rf utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+gcc -Wall -Wextra -Werror   -c -o utils.o utils.c
+gcc -Wall -Wextra -Werror   -c -o print.o print.c
+gcc -Wall -Wextra -Werror   -c -o flags_f.o flags_f.c
+gcc -Wall -Wextra -Werror   -c -o ft_printf.o ft_printf.c
+gcc -Wall -Wextra -Werror   -c -o parse.o parse.c
+gcc -Wall -Wextra -Werror   -c -o print_un.o print_un.c
+gcc -Wall -Wextra -Werror   -c -o utils1.o utils1.c
+gcc -Wall -Wextra -Werror   -c -o utils2.o utils2.c
+gcc -Wall -Wextra -Werror   -c -o work_int.o work_int.c
+gcc -Wall -Wextra -Werror   -c -o work_un.o work_un.c
+ar -rcs libftprintf.a utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+rm -rf utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+rm -rf libftprintf.a
+gcc -Wall -Wextra -Werror   -c -o utils.o utils.c
+gcc -Wall -Wextra -Werror   -c -o print.o print.c
+gcc -Wall -Wextra -Werror   -c -o flags_f.o flags_f.c
+gcc -Wall -Wextra -Werror   -c -o ft_printf.o ft_printf.c
+gcc -Wall -Wextra -Werror   -c -o parse.o parse.c
+gcc -Wall -Wextra -Werror   -c -o print_un.o print_un.c
+gcc -Wall -Wextra -Werror   -c -o utils1.o utils1.c
+gcc -Wall -Wextra -Werror   -c -o utils2.o utils2.c
+gcc -Wall -Wextra -Werror   -c -o work_int.o work_int.c
+gcc -Wall -Wextra -Werror   -c -o work_un.o work_un.c
+ar -rcs libftprintf.a utils.o print.o flags_f.o ft_printf.o parse.o print_un.o utils1.o utils2.o work_int.o work_un.o
+-rw-r--r--  1 deepthought  deepthought  26040 Nov  4 14:32 libftprintf.a
+
+total 192
+-rw-r--r--  1 deepthought  deepthought    405 Nov  4 14:32 Makefile
+-rw-r--r--  1 deepthought  deepthought   3617 Nov  4 14:32 flags_f.c
+-rw-r--r--  1 deepthought  deepthought   2580 Nov  4 14:32 ft_printf.c
+-rw-r--r--  1 deepthought  deepthought   3739 Nov  4 14:32 ft_printf.h
+-rw-r--r--  1 deepthought  deepthought  26040 Nov  4 14:32 libftprintf.a
+-rw-r--r--  1 deepthought  deepthought   1064 Nov  4 14:32 main.c
+-rw-r--r--  1 deepthought  deepthought   2583 Nov  4 14:32 parse.c
+-rw-r--r--  1 deepthought  deepthought   3303 Nov  4 14:32 print.c
+-rw-r--r--  1 deepthought  deepthought   2487 Nov  4 14:32 print_un.c
+-rw-r--r--  1 deepthought  deepthought   2193 Nov  4 14:32 test_hashtag.c
+-rw-r--r--  1 deepthought  deepthought   2092 Nov  4 14:32 test_plus.c
+-rw-r--r--  1 deepthought  deepthought   2080 Nov  4 14:32 test_space.c
+-rw-r--r--  1 deepthought  deepthought   1095 Nov  4 14:32 tests.h
+-rw-r--r--  1 deepthought  deepthought   1753 Nov  4 14:32 utils.c
+-rw-r--r--  1 deepthought  deepthought   
+2905 Nov  4 14:32 utils1.c
+-rw-r--r--  1 deepthought  deepthought   2127 Nov  4 14:32 utils2.c
+-rw-r--r--  1 deepthought  deepthought   3293 Nov  4 14:32 work_int.c
+-rw-r--r--  1 deepthought  deepthought   2206 Nov  4 14:32 work_un.c
+
+
+clang -Wall -Wextra -Werror   -c -o test_space.o test_space.c
+clang -Wall -Wextra -Werror   -c -o test_plus.o test_plus.c
+
+clang -Wall -Wextra -Werror   -c -o test_hashtag.o test_hashtag.c
+clang -Wall -Wextra -Werror   -c -o main.o main.c
+
+clang -Wall -Wextra -Werror -o test_printf -L. test_space.o test_plus.o test_hashtag.o main.o -lftprintf
+
+
+clang -Wall -Wextra -Werror   -c -o test_space.o test_space.c
+clang -Wall -Wextra -Werror   -c -o test_plus.o test_plus.c
+clang -Wall -Wextra -Werror   -c -o test_hashtag.o test_hashtag.c
+clang -Wall -Wextra -Werror   -c -o main.o main.c
+clang -Wall -Wextra -Werror -o test_printf -L. test_space.o test_plus.o test_hashtag.o main.o -lftprintf
+
+total 240
+-rw-r--r--  1 deepthought  deepthought    405 Nov  4 14:32 Makefile
+-rw-r--r--  1 deepthought  deepthought   3617 Nov  4 14:32 flags_f.c
+-rw-r--r--  1 deepthought  deepthought   2580 Nov  4 14:32 ft_printf.c
+-rw-r--r--  1 deepthought  deepthought   3739 Nov  4 14:32 ft_printf.h
+-rw-r--r--  1 deepthought  deepthought  26040 Nov  4 14:32 libftprintf.a
+-rw-r--r--  1 deepthought  deepthought   1064 Nov  4 14:32 main.c
+-rw-r--r--  1 deepthought  deepthought   2583 Nov  4 14:32 parse.c
+-rw-r--r--  1 deepthought  deepthought   3303 Nov  4 14:32 print.c
+-rw-r--r--  1 deepthought  deepthought   2487 Nov  4 14:32 print_un.c
+-rw-r--r--  1 deepthought  deepthought   2193 Nov  4 14:32 test_hashtag.c
+-rw-r--r--  1 deepthought  deepthought   2092 Nov  4 14:32 test_plus.c
+-rwxr-xr-x  1 deepthought  deepthought  23944 Nov  4 14:32 test_printf
+-rw-r--r--  1 deepthought  deepthought   2080 Nov  4 14:32 test_space.c
+-rw-r--r--  1 deepthought  deepthought   1095 Nov  4 14:32 tests.h
+-rw-r--r--  1 deepthought  deepthough
+t   1753 Nov  4 14:32 utils.c
+-rw-r--r--  1 deepthought  deepthought   2905 Nov  4 14:32 utils1.c
+-rw-r--r--  1 deepthought  deepthought   2127 Nov  4 14:32 utils2.c
+-rw-r--r--  1 deepthought  deepthought   3293 Nov  4 14:32 work_int.c
+-rw-r--r--  1 deepthought  deepthought   2206 Nov  4 14:32 work_un.c
+
+
+test_hashtag: [ok]
+test_space: [ok]
+
+test_plus: [ok]
+
+
+test_hashtag: [ok]
+test_space: [ok]
+test_plus: [ok]
+
+3/3 correct functions
+Grade: 10
+
+= Final grade: 125 =============================================================

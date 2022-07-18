@@ -1,0 +1,142 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+lab1r6s10.42abudhabi.ae
+Darwin 19.6.0 x86_64
+$> date
+Tue Oct 19 13:30:03 +04 2021
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/c++/4.2.1
+Apple clang version 12.0.0 (clang-1200.0.32.29)
+Target: x86_64-apple-darwin19.6.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple clang version 12.0.0 (clang-1200.0.32.29)
+Target: x86_64-apple-darwin19.6.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: git@vogsphere.42abudhabi.ae:vogsphere/intra-uuid-9fad7cac-91f2-47bd-9691-53dc2d2fe1d4-3845466
+
+= Git history ==================================================================
+$> git -C /tmp/tmp3uqpkdd3/user log --pretty='%H - %an, %ad : %s'
+f96b5b9237cfcfa88b6d1d29cc46d37e6a877052 - Muazzam Akhtar, Tue Oct 19 11:36:03 2021 +0400 : First-submit
+
+= Collected files ==========================================
+$> ls -lAR /tmp/tmp3uqpkdd3/user
+total 56
+-rw-r--r--  1 root  wheel   596 Oct 19 13:30 __GIT_HISTORY
+-rw-r--r--  1 root  wheel  2432 Oct 19 13:30 get_next_line.c
+-rw-r--r--  1 root  wheel  1252 Oct 19 13:30 get_next_line.h
+-rw-r--r--  1 root  wheel  2506 Oct 19 13:30 get_next_line_bonus.c
+-rw-r--r--  1 root  wheel  1264 Oct 19 13:30 get_next_line_bonus.h
+-rw-r--r--  1 root  wheel  1823 Oct 19 13:30 get_next_line_utils.c
+-rw-r--r--  1 root  wheel  1913 Oct 19 13:30 get_next_line_utils_bonus.c
+
+= basic_tests ==================================================================
+$> /usr/bin/norminette  get_next_line.c get_next_line_bonus.h get_next_line_utils.c get_next_line.h get_next_line_bonus.c get_next_line_utils_bonus.c | grep -E '^(Error|Warning)'
+
+
+total 104
+-rw-r--r--  1 deepthought  deepthought  2432 Oct 19 09:30 get_next_line.c
+-rw-r--r--  1 deepthought  deepthought  1252 Oct 19 09:30 get_next_line.h
+-rw-r--r--  1 deepthought  deepthought  1823 Oct 19 09:30 get_next_line_utils.c
+-rw-r--r--  1 deepthought  deepthought  1273 Oct 19 09:30 limited_pipe.c
+-rw-r--r--  1 deepthought  deepthought   527 Oct 19 09:30 main1.c
+-rw-r--r--  1 deepthought  deepthought  1382 Oct 19 09:30 main2.c
+-rw-r--r--  1 deepthought  deepthought   448 Oct 19 09:30 main2_generator.c
+-rw-r--r--  1 deepthought  deepthought   721 Oct 19 09:30 main3.c
+-rw-r--r--  1 deepthought  deepthought  2929 Oct 19 09:30 malloc.c
+-rw-r--r--  1 deepthought  deepthought  1447 Oct 19 09:30 ref_get_next_line.c
+-rwxr-xr-x  1 deepthought  deepthought  1552 Oct 19 09:30 test.sh
+-rwxr-xr-x  1 deepthought  deepthought   719 Oct 19 09:30 test2.sh
+-rwxr-xr-x  1 deepthought  deepthought  1523 Oct 19 09:30 test3.sh
+
+
+>>>>>>>>>>> 1
+
+>>>>>>>>>>> 2
+
+>>>>>>>>>>> 3
+
+>>>>>>>>>>> 4
+
+
+>>>>>>>>>>> 1
+>>>>>>>>>>> 2
+>>>>>>>>>>> 3
+>>>>>>>>>>> 4
+
+total 104
+-rw-r--r--  1 deepthought  deepthought  2432 Oct 19 09:30 get_next_line.c
+-rw-r--r--  1 deepthought  deepthought  1252 Oct 19 09:30 get_next_line.h
+-rw-r--r--  1 deepthought  deepthought  1823 Oct 19 09:30 get_next_line_utils.c
+-rw-r--r--  1 deepthought  deepthought  1273 Oct 19 09:30 limited_pipe.c
+-rw-r--r--  1 deepthought  deepthought   527 Oct 19 09:30 main1.c
+-rw-r--r--  1 deepthought  deepthought  1382 Oct 19 09:30 main2.c
+-rw-r--r--  1 deepthought  deepthought   448 Oct 19 09:30 main2_generator.c
+-rw-r--r--  1 deepthought  deepthought   721 Oct 19 09:30 main3.c
+-rw-r--r--  1 deepthought  deepthought  2929 Oct 19 09:30 malloc.c
+-rw-r--r--  1 deepthought  deepthought  1447 Oct 19 09:30 ref_get_next_line.c
+-rwxr-xr-x  1 deepthought  deepthought  1552 Oct 19 09:30 test.sh
+-rwxr-xr-x  1 deepthought  deepthought   719 Oct 19 09:30 test2.sh
+-rwxr-xr-x  1 deepthought  deepthought  1523 Oct 19 09:30 test3.sh
+
+
+>>>>>>>>>>> 5
+
+
+>>>>>>>>>>> 5
+
+total 104
+-rw-r--r--  1 deepthought  deepthought  2432 Oct 19 09:30 get_next_line.c
+-rw-r--r--  1 deepthought  deepthought  1252 Oct 19 09:30 get_next_line.h
+-rw-r--r--  1 deepthought  deepthought  1823 Oct 19 09:30 get_next_line_utils.c
+-rw-r--r--  1 deepthought  deepthought  1273 Oct 19 09:30 limited_pipe.c
+-rw-r--r--  1 deepthought  deepthought   527 Oct 19 09:30 main1.c
+-rw-r--r--  1 deepthought  deepthought  1382 Oct 19 09:30 main2.c
+-rw-r--r--  1 deepthought  deepthought   448 Oct 19 09:30 main2_generator.c
+-rw-r--r--  1 deepthought  deepthought   721 Oct 19 09:30 main3.c
+-rw-r--r--  1 deepthought  deepthought  2929 Oct 19 09:30 malloc.c
+-rw-r--r--  1 deepthought  deepthought  1447 Oct 19 09:30 ref_get_next_line.c
+-rwxr-xr-x  1 deepthought  deepthought  1552 Oct 19 09:30 test.sh
+-rwxr-xr-x  1 deepthought  deepthought   719 Oct 19 09:30 test2.sh
+-rwxr-xr-x  1 deepthought  deepthought  1523 Oct 19 09:30 test3.sh
+
+
+>>>>>>>>>>> 1
+>>>>>>>>>>> 2
+
+>>>>>>>>>>> 3
+>>>>>>>>>>> 4
+
+
+>>>>>>>>>>> 1
+>>>>>>>>>>> 2
+>>>>>>>>>>> 3
+>>>>>>>>>>> 4
+
+GNL OK
+Grade: 100
+
+= bonus_tests ==================================================================
+total 64
+-rw-r--r--  1 deepthought  deepthought  2506 Oct 19 09:30 get_next_line_bonus.c
+-rw-r--r--  1 deepthought  deepthought  1264 Oct 19 09:30 get_next_line_bonus.h
+-rw-r--r--  1 deepthought  deepthought  1913 Oct 19 09:30 get_next_line_utils_bonus.c
+-rw-r--r--  1 deepthought  deepthought  1273 Oct 19 09:30 limited_pipe.c
+-rw-r--r--  1 deepthought  deepthought  1630 Oct 19 09:30 main1.c
+-rw-r--r--  1 deepthought  deepthought  2929 Oct 19 09:30 malloc.c
+-rw-r--r--  1 deepthought  deepthought  1447 Oct 19 09:30 ref_get_next_line.c
+-rwxr-xr-x  1 deepthought  deepthought   864 Oct 19 09:30 test.sh
+
+
+>>>>>>>>>>> 1
+
+
+GNL OK
+Grade: 25
+
+= Final grade: 125 =============================================================

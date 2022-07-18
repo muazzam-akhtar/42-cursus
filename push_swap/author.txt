@@ -1,0 +1,7 @@
+Author: Muazzam Akhtar
+
+Intra: makhtar
+
+Subject: Push Swap
+
+Summary: Sorting Algorithm with minimum and specified amount of instructions.
