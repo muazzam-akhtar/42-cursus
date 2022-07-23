@@ -14,6 +14,7 @@
 |   04   | [**Minishell**](https://github.com/Genius-gambit/42-cursus/tree/main/minishell) |               C                | [![makhtar's 42 minishell Score](https://badge42.vercel.app/api/v2/cl1luvk8j002409l9kkweym5e/project/2598482)](https://github.com/JaeSeoKim/badge42) |
 |   04   | [**Exam Rank 03**](https://github.com/Genius-gambit/42-cursus/tree/main/exam-rank-03) |               C                | [![makhtar's 42 Exam Rank 03 Score](https://badge42.vercel.app/api/v2/cl1luvk8j002409l9kkweym5e/project/2469430)](https://github.com/JaeSeoKim/badge42) |
 |   05   | [**Exam Rank 04**](https://github.com/Genius-gambit/42-cursus/tree/main/exam-rank-04) |               C                | [![makhtar's 42 Exam Rank 04 Score](https://badge42.vercel.app/api/v2/cl1luvk8j002409l9kkweym5e/project/2606933)](https://github.com/JaeSeoKim/badge42) |
+|   05   | [**CPP Modules**](https://github.com/Genius-gambit/42-cursus/tree/master/CPP%20Modules) |               C++                | [![makhtar's 42 CPP Module 00 Score](https://badge42.vercel.app/api/v2/cl1luvk8j002409l9kkweym5e/project/2609460)](https://github.com/JaeSeoKim/badge42) |
 
 
 ## :camera: Intra Profile
