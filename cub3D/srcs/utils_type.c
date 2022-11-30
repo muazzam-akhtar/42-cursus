@@ -1,0 +1,111 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils_type.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hawadh <hawadh@student.42Abudhabi.ae>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/14 22:20:14 by makhtar           #+#    #+#             */
+/*   Updated: 2022/11/28 16:39:51 by hawadh           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../includes/cub.h"
+
+static int	get_type(char *str)
+{
+	if (str == NULL)
+		return (EXIT_FAILURE);
+	if (!ft_strcmp(str, "NO"))
+		return (1);
+	else if (!ft_strcmp(str, "SO"))
+		return (2);
+	else if (!ft_strcmp(str, "WE"))
+		return (3);
+	else if (!ft_strcmp(str, "EA"))
+		return (4);
+	else if (!ft_strcmp(str, "C"))
+		return (5);
+	else if (!ft_strcmp(str, "F"))
+		return (6);
+	return (FALSE);
+}
+
+char	*get_type_str(int type)
+{
+	if (type == 1)
+		return ("NO");
+	else if (type == 2)
+		return ("SO");
+	else if (type == 3)
+		return ("WE");
+	else if (type == 4)
+		return ("EA");
+	else if (type == 5)
+		return ("C");
+	else if (type == 6)
+		return ("F");
+	return (NULL);
+}
+
+int	data_init(t_info *info, int *i, int *ret)
+{
+	int	config_len;
+	int	count;
+
+	config_len = 6;
+	info->data->confg = (char **)ft_calloc(config_len + 1, sizeof(char *));
+	if (!info->data->confg)
+		return (EXIT_FAILURE);
+	*i = 0;
+	*ret = 0;
+	count = 0;
+	while (count <= config_len)
+	{
+		info->data->confg[count] = NULL;
+		count++;
+	}
+	return (EXIT_SUCCESS);
+}
+
+static int	check_array(int *arr)
+{
+	int	i;
+
+	i = 0;
+	while (i < 6)
+	{
+		if (arr[i] == -1)
+			return (EXIT_FAILURE);
+		i++;
+	}
+	return (EXIT_SUCCESS);
+}
+
+int	get_raw_layout(char *line)
+{
+	char		*tmp;
+	int			ret;
+	static int	arr[6];
+	static int	i;
+	static int	counter;
+
+	tmp = NULL;
+	ret = 0;
+	if (!counter)
+	{
+		while (i < 6)
+			arr[i++] = -1;
+	}
+	tmp = get_layouts(line);
+	ret = get_type(tmp);
+	free(tmp);
+	arr[ret - 1] = 1;
+	counter++;
+	if (counter == 6)
+	{
+		if (check_array(arr))
+			return (FALSE);
+	}
+	return (ret);
+}
