@@ -157,7 +157,7 @@ bool    BitcoinExchange::parsingDate(const std::string& date)
 bool    BitcoinExchange::parsingPrices(const std::string& date, const std::string& price)
 {
 	if (price.find_first_of(" ") != price.find_last_of(" ")
-		|| price.find_first_not_of("0123456789.- \r") < price.length() || price.compare("2147483647") == 1)
+		|| price.find_first_not_of("0123456789.- \r") < price.length())
 	{
 		std::string tmp;
 		tmp = "Error: Not a valid number =>" + price;
@@ -174,7 +174,7 @@ bool    BitcoinExchange::parsingPrices(const std::string& date, const std::strin
 		this->_result.insert(std::pair<std::string, std::string>(date, tmp));
 		return (false);
 	}
-	if (amount >= 0 && amount <= 1000)
+	if ((price.size() < 6) && (amount >= 0 && amount <= 1000))
 	{
 		execution(date, amount);
 		return (true);

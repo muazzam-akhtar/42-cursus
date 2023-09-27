@@ -40,7 +40,7 @@ int	PmergeMe::validInputs(const std::string& s)
 {
 	std::string	str = "0123456789";
 
-	if (s.find_first_not_of(str) < str.size() || s.compare("2147483647") == 1)
+	if (s.find_first_not_of(str) < str.size() || s.size() > 10)
 		return (0);
 	return (1);
 }
@@ -127,7 +127,7 @@ int	PmergeMe::parseInput(void)
 		long int			num;
 
 		sstream >> num;
-		if (num < 0 || (num == 0 && this->_str.back().size() > 1) || !validInputs(this->_str.back()))
+		if (num < 0 || (num == 0 && this->_str.back().size() > 1) || !validInputs(this->_str.back()) || num > 2147483647)
 			return (printError(1));
 		if (std::find(_list.begin(), _list.end(), num) != _list.end())
 			return (printError(0));
