@@ -1,0 +1,76 @@
+services:
+  ## Nginx Services
+  nginx:
+    container_name: nginx
+    build:
+      context: ./requirements/nginx
+      args:
+        WORDPRESS_ADMIN_NAME: ${WORDPRESS_ADMIN_NAME}
+    ports:
+      - "443:443"
+    environment:
+      - DOMAIN_NAME
+    volumes:
+      - wordpress_data:/var/www/html/
+    networks:
+      - internal
+    restart:  on-failure
+    depends_on:
+      - wordpress
+  ## Mariadb Services
+  mariadb:
+    container_name: mariadb
+    build:
+      context: ./requirements/mariadb
+      args:
+        MYSQL_USER: ${MYSQL_USER}
+        MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+        MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+        MYSQL_DB: ${MYSQL_DB}
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    networks:
+      - internal
+    restart:  on-failure
+    env_file:
+      - ./.env
+    expose:
+      - 3306
+  ## Wordpress Services
+  wordpress:
+    container_name: wordpress
+    build:
+      context: ./requirements/wordpress
+      args:
+        DOMAIN_NAME: ${DOMAIN_NAME}
+    volumes:
+      - wordpress_data:/var/www/html/
+    env_file:
+      - ./.env
+    networks:
+      - internal
+    depends_on:
+      - mariadb
+    restart: on-failure
+    expose:
+      - 9000
+
+volumes:
+  wordpress_data:
+    name: wordpress_data
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/makhtar/data/wordpress
+      o: bind
+  mariadb_data:
+    name: mariadb_data
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/makhtar/data/mariadb
+      o: bind
+
+networks:
+  internal:
+      driver: bridge
