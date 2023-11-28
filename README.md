@@ -26,4 +26,4 @@
 
 ## :camera: Intra Profile
 
-[![makhtar's 42 stats](https://badge42.vercel.app/api/v2/cl1luvk8j002409l9kkweym5e/stats?cursusId=21&coalitionId=152)](https://github.com/JaeSeoKim/badge42)
+[![makhtar's 42 stats](https://badge.mediaplus.ma/greenbinary/makhtar?1337Badge=off&UM6P=off)](https://github.com/oakoudad/badge42)
